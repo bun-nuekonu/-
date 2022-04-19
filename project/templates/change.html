@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="detail_main">
+        <h3>なまえをかえる？</h3>
+        <form action="/change" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="change" placeholder="{{ username }}" type="text" value="{{ username }}">
+            </div>
+            <button class="btn_form" type="submit">変更する</button>
+        </form>
+    </div>
+{% endblock %}

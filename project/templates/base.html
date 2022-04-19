@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+        <title>誕生日ホルダー</title>
+        {% block script %}{% endblock %}
+    </head>
+    <body>
+
+        <header>
+            <div class="div_logo"><a class="logo" href="/">誕生日ホルダー</a></div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer>
+            <small>Copyright ©bun</small>
+        </footer>
+
+    </body>
+</html>

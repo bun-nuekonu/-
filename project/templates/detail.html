@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="detail_main">
+        <p>{{ name }}</p>
+        <p>{% if not year == '' %}{{ year }}/{% endif %}{{ month }}/{{ day }}</p>
+        {% if not age == 0 %}<p>{{ age.years }}歳</p>{% endif %}
+        <p class="days">あと{{ days.days }}日</p>
+    </div>
+
+    <h3 class="memo">~Memo~</h3>
+    <div class="detail_memo">
+    <p>{{ memo }}</p>
+    </div>
+    <form action="/edit" method="post">
+        <button class="btn_form" type="submit" name="edit" value="{{ detail_id }}">編集</button>
+        <button class="btn_form_red" type="submit" name="delete" value="{{ detail_id }}">削除</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="set_main">
+        <h3>設定</h3>
+        <form action="/setting" method="post">
+            <!-- <button class="btn_form_usage" type="submit" name="usage" value="set">使い方</button> -->
+            <button class="btn_form_usage" type="submit" name="change" value="set">なまえを変える</button>
+             <button class="btn_form_usage" type="submit" name="birthdelete" value="set">誕生日の全削除</button>
+            <button class="btn_form_red_usage" type="submit" name="delete" value="set">アカウント削除</button>
+        </form>
+    </div>
+{% endblock %}

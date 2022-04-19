@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="detail_main">
+        <h3>本当に消しても大丈夫？</h3>
+        <form action="/delete" method="post">
+            <button class="btn_form_red red_delete" type="submit" name="yes" value="{{ delete }}">消す</button>
+            <button class="btn_form" type="submit" name="no" value="{{ delete }}">やめる</button>
+        </form>
+    </div>
+{% endblock %}

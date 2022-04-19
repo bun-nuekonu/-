@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="index_main">
+        <button class="btn_top_set" onclick="location.href='/setting'">設定</button>
+        <button class="btn_top" onclick="location.href='/add'">誕生日追加</button>
+        <button class="btn_top" onclick="location.href='/logout'">ログアウト</button>
+
+        {% if size == 0 %}
+            <h3 class='notice'>まだ誕生日が登録されていないよ！</h3>
+        {% else %}
+            <table width="100%" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(size) %}
+                        <tr>
+                            <td width="55%" class="name">{{ birthdays[i].name }}</td>
+                            <td width="25%" class="birth">{{ birthdays[i].month }}/{{ birthdays[i].day }}</td>
+                            <form action="/detail" method="post">
+                                <td width="20%" class="detail">
+                                    <button class="btn_detail" type="submit" name="detail" value="{{ birthdays[i].id }}">詳細</button>
+                                </td>
+                            </form>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

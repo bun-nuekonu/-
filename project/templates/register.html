@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="detail_main">
+        <h3>なまえとパスワードを入力してね！</h3>
+
+        <form action="/register" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="なまえ" type="text" value="{{ username }}">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="パスワード" type="password">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="confirmation" placeholder="パスワード(再入力)" type="password">
+            </div>
+            <button class="btn_form" type="submit">登録する</button>
+        </form>
+    </div>
+    <h4 class="logregi">既に登録している方は<a href="/login">コチラ</a></h4>
+{% endblock %}
